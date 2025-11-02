@@ -1,4 +1,4 @@
-package dev.semotpan.model;
+package dev.semotpan.ingest.model;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

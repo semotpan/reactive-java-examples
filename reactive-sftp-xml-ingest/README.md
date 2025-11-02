@@ -1,4 +1,4 @@
-# Reactive SFTP XML Ingester
+# Reactive SFTP XML Ingest
 
 _**Spring Integration + Project Reactor + Dynamic XML Parsing**_
 
@@ -58,13 +58,13 @@ flowchart LR
 ### Run tests
 
 ```shell
-cd reactive-sftp-xml-ingester
+cd reactive-sftp-xml-ingest
 ```
 
 _Ensure docker is running_
 
 ```shell
-  mvn test
+  mvn clean compile test
 ```
 
 ---
@@ -81,7 +81,7 @@ _Ensure docker is running_
 2. Start infrastructure
 
 ```shell
-  docker compose up -d
+  docker compose up
 ```
 
 **Services:**
@@ -98,7 +98,7 @@ _Ensure docker is running_
 
 ```shell
   mvn clean package
-  java -jar target/reactive-sftp-xml-ingester-0.0.1-SNAPSHOT.jar
+  java -jar target/reactive-sftp-xml-ingest-0.0.1-SNAPSHOT.jar
 ```
 or
 ```shell

@@ -1,4 +1,4 @@
-package dev.semotpan.sftp;
+package dev.semotpan.ingest.sftp;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
@@ -6,9 +6,9 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import dev.semotpan.model.Invoices;
-import dev.semotpan.model.Transactions;
-import dev.semotpan.model.XmlDocument;
+import dev.semotpan.ingest.model.Invoices;
+import dev.semotpan.ingest.model.Transactions;
+import dev.semotpan.ingest.model.XmlDocument;
 
 import java.io.IOException;
 import java.util.List;

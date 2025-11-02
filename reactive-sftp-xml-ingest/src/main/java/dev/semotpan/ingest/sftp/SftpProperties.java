@@ -1,4 +1,4 @@
-package dev.semotpan.sftp;
+package dev.semotpan.ingest.sftp;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

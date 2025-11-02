@@ -1,11 +1,11 @@
-package dev.semotpan.sftp;
+package dev.semotpan.ingest.sftp;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import dev.semotpan.DocumentHandler;
-import dev.semotpan.model.XmlDocument;
+import dev.semotpan.ingest.DocumentHandler;
+import dev.semotpan.ingest.model.XmlDocument;
 import io.micrometer.tracing.Tracer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

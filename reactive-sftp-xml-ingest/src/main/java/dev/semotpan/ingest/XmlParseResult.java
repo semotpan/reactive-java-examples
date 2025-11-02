@@ -1,6 +1,6 @@
-package dev.semotpan;
+package dev.semotpan.ingest;
 
-import dev.semotpan.model.XmlDocument;
+import dev.semotpan.ingest.model.XmlDocument;
 import lombok.Builder;
 
 @Builder

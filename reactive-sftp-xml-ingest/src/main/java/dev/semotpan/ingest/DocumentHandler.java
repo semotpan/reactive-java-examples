@@ -1,4 +1,4 @@
-package dev.semotpan;
+package dev.semotpan.ingest;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.RequiredArgsConstructor;

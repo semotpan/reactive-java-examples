@@ -1,9 +1,9 @@
-package dev.semotpan.sftp;
+package dev.semotpan.ingest.sftp;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import dev.semotpan.DocumentHandler;
-import dev.semotpan.XmlParseResult;
-import dev.semotpan.model.XmlDocument;
+import dev.semotpan.ingest.DocumentHandler;
+import dev.semotpan.ingest.XmlParseResult;
+import dev.semotpan.ingest.model.XmlDocument;
 import io.micrometer.tracing.Span;
 import io.micrometer.tracing.Tracer;
 import lombok.RequiredArgsConstructor;

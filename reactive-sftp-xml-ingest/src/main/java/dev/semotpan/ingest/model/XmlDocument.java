@@ -1,4 +1,4 @@
-package dev.semotpan.model;
+package dev.semotpan.ingest.model;
 
 public interface XmlDocument {
 

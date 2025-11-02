@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.semotpan</groupId>
-    <artifactId>reactive-sftp-xml-ingester</artifactId>
+    <artifactId>reactive-sftp-xml-ingest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>webflux-sftp-xml-ingester</name>
     <description>Reactive SFTP XML ingestion using Spring Integration and Reactor</description>
