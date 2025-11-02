@@ -1,0 +1,39 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "--appendonly", "yes" ]
+    healthcheck:
+      test: [ "CMD", "redis-cli", "PING" ]
+      interval: 5s
+      timeout: 2s
+      retries: 20
+    restart: unless-stopped
+
+  sftp:
+    image: atmoz/sftp:latest
+    container_name: sftp
+    # Format: user:pass:uid:gid:subdir
+    command: "foo:secret:1001:100:upload"
+    ports:
+      - "2222:22"
+    volumes:
+      # Host folder mapped to /home/foo/upload inside the container
+      - ./local/sftp/upload:/home/foo/upload
+    healthcheck:
+      test: [ "CMD", "ls", "-la", "/home/foo/upload" ]
+      interval: 10s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    environment:
+      - SFTP_LOG_LEVEL=INFO
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    restart: unless-stopped

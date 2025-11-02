@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices>
+    <invoice>
+        <id>INV-1</id>
+        <amount>123.45</amount>
+        <currency>EUR</currency>
+    </invoice>
+    <invoice>
+        <id>INV-2</id>
+        <amount>89.99</amount>
+        <currency>USD</currency>
+    </invoice>
+    <invoice>
+        <id>INV-3</id>
+        <amount>250.00</amount>
+        <currency>GBP</currency>
+    </invoice>
+    <invoice>
+        <id>INV-4</id>
+        <amount>15.75</amount>
+        <currency>EUR</currency>
+    </invoice>
+    <invoice>
+        <id>INV-5</id>
+        <amount>999.00</amount>
+        <currency>CHF</currency>
+    </invoice>
+</invoices>

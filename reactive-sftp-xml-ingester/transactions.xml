@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions>
+    <transaction>
+        <id>TX-2001</id>
+        <postingDate>2025-10-31</postingDate>
+        <amount Ccy="EUR">1450.00</amount>
+        <direction>CRDT</direction>
+        <reference>INV-1001</reference>
+        <counterparty>Acme Ltd</counterparty>
+    </transaction>
+    <transaction>
+        <id>TX-2002</id>
+        <postingDate>2025-11-01</postingDate>
+        <amount Ccy="USD">-75.50</amount>
+        <direction>DBIT</direction>
+        <reference>SUBS-STREAM</reference>
+        <counterparty>StreamCo</counterparty>
+    </transaction>
+</transactions>
