@@ -17,33 +17,16 @@ _**Spring Integration + Project Reactor + Dynamic XML Parsing**_
 - **Idempotent processing** with Redis `ConcurrentMetadataStore`
 - **Tracing and observability** via Micrometer + Zipkin
 
----
-
-
-### Architecture
-
-```mermaid
-flowchart LR
-  A[SFTP Server] -->|poll @ fixedDelay| B[SftpStreamingMessageSource]
-  B -->|InputStream + headers| C[MessageChannel 'stream']
-  C --> D[XmlReactiveSftpMessageHandler]
-  D -->|readValue(XmlDocument)| E[XmlMapper + XmlDocumentDeserializer]
-  E -->|Invoices| F1[DocumentHandler.handle()]
-  E -->|Transactions| F2[DocumentHandler.handle()]
-  D -->|onError| F3[DocumentHandler.handle(error)]
-```
 
 ---
 
 ### Components Overview
-```mermaid
 | Component                         | Responsibility                                                                                 |
 | --------------------------------- | ---------------------------------------------------------------------------------------------- |
 | IntegrationConfig                 | Defines SFTP connection, file filters, Redis-backed idempotency, and reactive message channel. |
 | XmlReactiveSftpMessageHandler     | Streams and parses XML reactively with `Mono.using`, handles tracing and error tagging.        |
 | XmlDocumentDeserializer           | Routes XML documents dynamically based on root element (`<invoices>`, `<transactions>`).       |
 | DocumentHandler                   | Processes parsed documents (e.g., log, persist, or publish downstream).                        |
-```
 
 ---
 
@@ -58,7 +41,7 @@ flowchart LR
 ### Run tests
 
 ```shell
-cd reactive-sftp-xml-ingest
+  cd reactive-sftp-xml-ingest
 ```
 
 _Ensure docker is running_
@@ -86,13 +69,12 @@ _Ensure docker is running_
 
 **Services:**
 
-```mermaid
 | Service | Port | Description                                                  |
 | ------- | ---- | ------------------------------------------------------------ |
 | SFTP    | 2222 | user: `foo`, password: `secret`                              |
 | Redis   | 6379 | metadata store                                               |
 | Zipkin  | 9411 | tracing UI at [http://localhost:9411](http://localhost:9411) |
-```
+
 
 3. Build and run the app
 
@@ -117,14 +99,13 @@ Place XML files into `./local/sftp/upload` — the poller will detect, stream, a
 
 - Access: http://localhost:9411/zipkin/?serviceName=webflux-sftp-xml-ingester&lookback=15m&endTs=1762080463269&limit=10
 
-```mermaid
 | Tag              | Description      |
 | ---------------- | ---------------- |
 | `remote.file`    | remote file name |
 | `statement.type` | parsed XML type  |
 | `error.type`     | exception type   |
 | `error.msg`      | error message    |
-```
+
 
 Failures produce a ParsedDocument with error details for downstream handling (e.g., DLQ or alerting).
 
